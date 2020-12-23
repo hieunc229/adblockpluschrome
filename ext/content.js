@@ -9,7 +9,7 @@ let ext = window.ext; // eslint-disable-line no-redeclare
 // As a workaround, listen for messages only if this isn't the devtools panel.
 // Note that Firefox processes API access lazily, so browser.devtools will
 // always exist but will have undefined as its value on other pages.
-if (!browser.devtools)
+if (typeof browser !== "undefined" && !browser.devtools)
 {
   // Listen for messages from the background page.
   browser.runtime.onMessage.addListener((message, sender, sendResponse) =>
