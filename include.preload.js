@@ -173,7 +173,7 @@ function startElementCollapsing()
 
 function checkSitekey()
 {
-  let attr = document.documentElement.getAttribute("data-adblockkey");
+  let attr = document.documentElement && document.documentElement.getAttribute("data-adblockkey");
   if (attr)
     browser.runtime.sendMessage({type: "filters.addKey", token: attr});
 }
