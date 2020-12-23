@@ -225,7 +225,7 @@
   {
     try
     {
-      return !(browser.storage.local.get([]) instanceof Promise);
+      return typeof browser !== "undefined" && !(browser.storage.local.get([]) instanceof Promise);
     }
     catch (error)
     {
